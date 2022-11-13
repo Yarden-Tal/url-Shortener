@@ -1,0 +1,42 @@
+<template>
+  <header>
+    <nav>
+      <div class="nav-left-side">
+        <div>Shortly</div>
+        <!-- v-if DESKTOP -->
+        <ul class="nav-left-side-desktop">
+          <li><button>Features</button></li>
+          <li><button>Pricing</button></li>
+          <li><button>Resources</button></li>
+        </ul>
+      </div>
+
+      <div class="nav-right-side">
+        <!-- v-if DESKTOP -->
+        <ul>
+          <li><button>Login</button></li>
+          <li><button>Sign Up</button></li>
+        </ul>
+        <!-- v-if MOBILE -->
+        <!-- CHANGE BOOL !! -->
+        <div class="hamburger-btn" v-show="false">
+          <img src="" alt="Menu" />
+        </div>
+        <!-- CHANGE BOOL !! -->
+        <DropdownMenu v-show="false" />
+        <!-- CHANGE BOOL !! -->
+      </div>
+    </nav>
+  </header>
+</template>
+
+<script lang="ts">
+import { Component } from "vue";
+import DropdownMenu from "./header/DropdownMenu.vue";
+
+export default {
+  components: {
+    DropdownMenu: DropdownMenu as Component,
+  },
+};
+</script>
