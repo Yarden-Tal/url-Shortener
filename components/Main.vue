@@ -11,8 +11,12 @@
 
     <section class="form-section">
       <div class="form-container">
-        <input type="text" placeholder="Shorten a link here..." id="" />
-        <button>Shorten It!</button>
+        <input
+          type="text"
+          placeholder="Shorten a link here..."
+          v-model="inputUrl"
+        />
+        <button @click="handleClick">Shorten It!</button>
       </div>
     </section>
 
@@ -48,10 +52,12 @@
 import { Component } from "vue";
 import GetStartedButton from "../components/custom-components/GetStartedButton.vue";
 import Card from "../components/custom-components/Card.vue";
+import getData from "../api/api";
 
 export default {
   data() {
     return {
+      inputUrl: "",
       cardImages: [
         "images/icon-brand-recognition.svg",
         "images/icon-detailed-records.svg",
@@ -76,6 +82,15 @@ export default {
   components: {
     GetStartedButton: GetStartedButton as Component,
     Card: Card as Component,
+  },
+  methods: {
+    handleClick(): void {
+      getData(this.inputUrl);
+      this.inputUrl = "";
+    },
+    handleInput(text: string): string {
+      return (this.inputUrl = text);
+    },
   },
 };
 </script>
