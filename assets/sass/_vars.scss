@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+// Breakpoints //
+$mobile: 375px;
+$desktop: 1440px;
+
+// Colors //
+
+// Primary
+
+$cyan: hsl(180, 66%, 49%);
+$dark-violet: hsl(257, 27%, 26%);
+
+// Secondary
+
+$red: hsl(0, 87%, 67%);
+
+// Neutral
+
+$gray: hsl(0, 0%, 75%);
+$grayish-violet: hsl(257, 7%, 63%);
+$very-dark-blue: hsl(255, 11%, 22%);
+$very-dark-violet: hsl(260, 8%, 14%);
+
+// Typography //
+
+$font-size: 18px;
+$font-family: "Poppins", sans-serif;
+$font-weights: (
+  "medium": 500,
+  "bold": 700,
+);
