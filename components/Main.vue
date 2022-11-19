@@ -21,12 +21,7 @@
     </section>
 
     <section class="results-section">
-      <Card
-        v-for="(_card, i) in cardImages"
-        :image="cardImages[i]"
-        :title="cardTitles[i]"
-        :text="cardTexts[i]"
-      />
+      <!-- <ShortLink v-for="(link, i) in links" class="" />  -->
     </section>
 
     <section class="adv-statistics-section">
@@ -38,7 +33,12 @@
     </section>
 
     <section class="feature-cards-section">
-      <!-- Single card -->
+      <Card
+        v-for="(_card, i) in cardImages"
+        :image="cardImages[i]"
+        :title="cardTitles[i]"
+        :text="cardTexts[i]"
+      />
     </section>
 
     <section class="boost-today-section">
@@ -52,6 +52,7 @@
 import { Component } from "vue";
 import GetStartedButton from "../components/custom-components/GetStartedButton.vue";
 import Card from "../components/custom-components/Card.vue";
+import ShortLink from "../components/custom-components/ShortLink.vue";
 import getData from "../api/api";
 
 export default {
@@ -82,6 +83,7 @@ export default {
   components: {
     GetStartedButton: GetStartedButton as Component,
     Card: Card as Component,
+    ShortLink: ShortLink as Component,
   },
   methods: {
     handleClick(): void {

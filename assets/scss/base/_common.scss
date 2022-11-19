@@ -1,0 +1,19 @@
+@import "../utilities/vars";
+@import "../utilities/mixins";
+
+body {
+  font-family: $font-family;
+  font-size: $font-size;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  border: none;
+}
+
+footer {
+  background-color: black;
+}
