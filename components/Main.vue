@@ -31,7 +31,11 @@
     </section>
 
     <section class="results-section">
-      <!-- <ShortLink v-for="(link, i) in links" class="" />  -->
+      <ShortLink
+        v-for="(result, i) in resultsArray"
+        class="result-container"
+        :result="result"
+      />
     </section>
 
     <section class="adv-statistics-section">
@@ -68,6 +72,7 @@ import getData from "../api/api";
 export default {
   data() {
     return {
+      resultsArray: [] as Array<string[]>,
       urlRegex: RegExp(
         /((?:(?:http?|ftp)[s]*:\/\/)?[a-z0-9-%\/\&=?\.]+\.[a-z]{2,4}\/?([^\s<>\#%"\,\{\}\\|\\\^\[\]`]+)?)/gi
       ),
@@ -127,8 +132,13 @@ export default {
         return true;
       }
     },
-    sendInput(): void {
-      getData(this.inputUrl);
+    async sendInput(): Promise<void> {
+      const res: Result = await getData(this.inputUrl);
+      const { original_link, short_link } = res;
+      this.resultsArray.push([original_link, short_link]);
+      this.resetStates();
+    },
+    resetStates(): void {
       this.inputIsInvalid = false;
       this.inputIsEmpty = false;
       this.inputUrl = "";
