@@ -2,8 +2,24 @@
 @import "../utilities/mixins";
 
 body {
-  font-family: $font-family;
-  font-size: $font-size;
+  font-family: $poppins;
+  font-size: $default-font-size;
+}
+
+section {
+  text-align: center;
+}
+
+h1 {
+  color: $very-dark-violet;
+  font-weight: nth(map-values($font-weights), 2);
+  font-size: 32px;
+  text-shadow: 2px 0px 0px;
+}
+
+h3 {
+  color: $very-dark-violet;
+  font-weight: nth(map-values($font-weights), 2);
 }
 
 ul {
@@ -12,8 +28,21 @@ ul {
 
 button {
   border: none;
+  font-size: 16px;
 }
 
 footer {
   background-color: black;
+}
+
+.show-error-msg {
+  margin: auto 0;
+  color: $red;
+  text-align: start;
+  transition: all 0.2s;
+}
+
+.empty-input-error {
+  @include form-error;
+  transition: all 0.2s;
 }

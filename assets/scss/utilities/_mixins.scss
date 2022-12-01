@@ -1,1 +1,30 @@
 @import "./vars";
+
+/// Creates a uniform cyan hover color for the buttons
+@mixin cyan-btn-hover {
+  &:hover {
+    background-color: lighten($cyan, 25);
+  }
+}
+
+/// Creates a uniform style for all cyan buttons
+@mixin cyan-btn-common {
+  color: white;
+  background-color: $cyan;
+  font-weight: nth(map-values($font-weights), 2);
+  cursor: pointer;
+}
+
+/// Creates the error style for the form
+@mixin form-error {
+  outline: 3px solid $red;
+  &::placeholder {
+    color: $red;
+  }
+}
+
+/// Creates uniform grey text
+@mixin grey-text {
+  color: $gray;
+  font-weight: nth(map-values($font-weights), 2);
+}

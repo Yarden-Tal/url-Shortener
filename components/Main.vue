@@ -2,7 +2,7 @@
   <main>
     <section class="get-started-section">
       <h1>More than just shorter links</h1>
-      <p>
+      <p class="get-started-txt">
         Build your brands recognition and get detailed insights on how your
         links are performing.
       </p>
@@ -12,11 +12,21 @@
     <section class="form-section">
       <div class="form-container">
         <input
+          @keyup.enter="handleSubmit"
+          :class="{ 'empty-input-error': inputIsEmpty || inputIsInvalid }"
           type="text"
           placeholder="Shorten a link here..."
           v-model="inputUrl"
         />
-        <button @click="handleClick">Shorten It!</button>
+        <p
+          :class="{
+            'error-msg': !inputIsInvalid,
+            'show-error-msg': inputIsEmpty || inputIsInvalid,
+          }"
+        >
+          {{ errorMsg }}
+        </p>
+        <button @click="handleSubmit">Shorten It!</button>
       </div>
     </section>
 
@@ -58,6 +68,11 @@ import getData from "../api/api";
 export default {
   data() {
     return {
+      urlRegex: RegExp(
+        /((?:(?:http?|ftp)[s]*:\/\/)?[a-z0-9-%\/\&=?\.]+\.[a-z]{2,4}\/?([^\s<>\#%"\,\{\}\\|\\\^\[\]`]+)?)/gi
+      ),
+      inputIsEmpty: false as boolean,
+      inputIsInvalid: false as boolean,
       inputUrl: "",
       cardImages: [
         "images/icon-brand-recognition.svg",
@@ -86,12 +101,43 @@ export default {
     ShortLink: ShortLink as Component,
   },
   methods: {
-    handleClick(): void {
-      getData(this.inputUrl);
-      this.inputUrl = "";
-    },
     handleInput(text: string): string {
       return (this.inputUrl = text);
+    },
+    handleSubmit(): void {
+      this.checkIfInputEmpty();
+      if (this.validateUrl(this.inputUrl)) this.sendInput();
+      else return;
+    },
+    checkIfInputEmpty(): boolean {
+      if (!this.inputUrl) {
+        this.inputIsEmpty = true;
+        return true;
+      } else {
+        this.inputIsEmpty = false;
+        return false;
+      }
+    },
+    validateUrl(text: string): boolean {
+      if (!this.urlRegex.test(text)) {
+        this.inputIsInvalid = true;
+        return false;
+      } else {
+        this.inputIsInvalid = false;
+        return true;
+      }
+    },
+    sendInput(): void {
+      getData(this.inputUrl);
+      this.inputIsInvalid = false;
+      this.inputIsEmpty = false;
+      this.inputUrl = "";
+    },
+  },
+  computed: {
+    errorMsg() {
+      if (this.inputIsEmpty) return "Please add a link" as string;
+      if (this.inputIsInvalid) return "Please enter a valid URL" as string;
     },
   },
 };

@@ -1,0 +1,9 @@
+@import "../utilities/vars";
+@import "../utilities/mixins";
+
+.get-started-btn {
+  border-radius: 30px;
+  padding: 5% 11%;
+  @include cyan-btn-hover;
+  @include cyan-btn-common;
+}

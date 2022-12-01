@@ -1,4 +1,88 @@
-.adv-statistics-section,
+@import "../utilities/mixins";
+@import "../utilities/vars";
+
+// Get started section //
+.get-started-section {
+  margin: 2% 6% 20% 6%;
+  .get-started-txt {
+    @include grey-text;
+  }
+}
+
+// Form section
+.form-section {
+  border-radius: 5px;
+  margin: 0 auto;
+  width: 85%;
+  background: url("/images/bg-shorten-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  .form-container {
+    padding: 5%;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    & > input {
+      border-color: transparent;
+      border-radius: 5px;
+      padding: 5% 9%;
+      & ::placeholder {
+        color: $gray;
+      }
+    }
+    & .error-msg {
+      display: none;
+    }
+    & > button {
+      border-radius: 5px;
+      padding: 5% 9%;
+      @include cyan-btn-common;
+      @include cyan-btn-hover;
+    }
+  }
+}
+
+// Adv statistics section
+.adv-statistics-section {
+  & p {
+    @include grey-text;
+  }
+}
+
+// Feature cards section
+.feature-cards-section {
+  & p {
+    @include grey-text;
+  }
+  & .card-container {
+    & > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      border-radius: 50%;
+      padding: 0.5rem;
+      background-color: $dark-violet;
+      margin: 0 auto;
+      width: 25%;
+      height: 80px;
+    }
+  }
+}
+
+// Boost today section
 .boost-today-section {
-  text-align: center;
+  height: 20rem;
+  background: url("/images/bg-boost-mobile.svg");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  & > div {
+    color: white;
+    background-color: $dark-violet;
+    opacity: 0.6;
+  }
 }

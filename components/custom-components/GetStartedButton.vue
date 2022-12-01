@@ -1,3 +1,3 @@
 <template>
-  <button>Get Started</button>
+  <button class="get-started-btn">Get Started</button>
 </template>
