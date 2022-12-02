@@ -1,6 +1,10 @@
 @import "../utilities/vars";
 @import "../utilities/mixins";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: $poppins;
   font-size: $default-font-size;

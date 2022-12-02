@@ -31,7 +31,8 @@ export default {
     },
     async copyURL(url: string): Promise<void> {
       try {
-        await navigator.clipboard.writeText(url);
+        const { clipboard } = navigator;
+        await clipboard.writeText(url);
       } catch (e) {
         alert(e);
       }

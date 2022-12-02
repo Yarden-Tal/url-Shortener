@@ -6,12 +6,13 @@
         Build your brands recognition and get detailed insights on how your
         links are performing.
       </p>
-      <GetStartedButton />
+      <GetStartedButton @click="focusOnInput" />
     </section>
 
     <section class="form-section">
       <div class="form-container">
         <input
+          ref="urlInput"
           @keyup.enter="handleSubmit"
           :class="{ 'empty-input-error': inputIsEmpty || inputIsInvalid }"
           type="text"
@@ -57,7 +58,7 @@
 
     <section class="boost-today-section">
       <div>Boost your links today</div>
-      <GetStartedButton />
+      <GetStartedButton @click="focusOnInput" />
     </section>
   </main>
 </template>
@@ -143,11 +144,15 @@ export default {
       this.inputIsEmpty = false;
       this.inputUrl = "";
     },
+    focusOnInput(): void {
+      const input = this.$refs.urlInput as HTMLInputElement;
+      input.focus();
+    },
   },
   computed: {
-    errorMsg() {
-      if (this.inputIsEmpty) return "Please add a link" as string;
-      if (this.inputIsInvalid) return "Please enter a valid URL" as string;
+    errorMsg(): string | undefined {
+      if (this.inputIsEmpty) return "Please add a link";
+      if (this.inputIsInvalid) return "Please enter a valid URL";
     },
   },
 };
