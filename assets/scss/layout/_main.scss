@@ -23,9 +23,11 @@
     gap: 0.5rem;
     flex-direction: column;
     & > input {
+      font-size: $default-font-size;
       border-color: transparent;
       border-radius: 5px;
       padding: 5% 9%;
+      margin-bottom: -5px;
       & ::placeholder {
         color: $gray;
       }
@@ -50,13 +52,44 @@
   display: flex;
   flex-direction: column;
   & .result-container {
-    display: flex;
-    flex-direction: column;
+    background-color: white;
+    margin: 0.7em 0;
+    & .link-original {
+      text-align: start;
+      overflow: auto;
+      border-bottom: 1px solid rgba(220, 220, 220, 0.648);
+
+      & p {
+        padding: 0 5%;
+        margin: 0.6em 0 0.5em 0;
+      }
+    }
+    & .result-inner {
+      padding: 5%;
+      font-weight: nth(map-values($font-weights), 2);
+      & .link-shortened {
+        text-align: start;
+        margin-bottom: 0.5em;
+        & a {
+          color: $cyan;
+          text-decoration: none;
+        }
+      }
+      & .copy-btn {
+        width: 100%;
+        border-radius: 5px;
+        padding: 5% 9%;
+        @include cyan-btn-common;
+        @include cyan-btn-hover;
+      }
+    }
   }
 }
 
 // Adv statistics section
 .adv-statistics-section {
+  width: 85%;
+  padding: 5%;
   & p {
     @include grey-text;
   }

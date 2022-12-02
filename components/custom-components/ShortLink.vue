@@ -1,13 +1,17 @@
 <template>
-  <div class="link-container">
+  <div class="result-container">
     <div class="link-original">
       <p>{{ originalLink }}</p>
     </div>
-    <div class="link-shortened">
-      <p>{{ shortenedLink }}</p>
+    <div class="result-inner">
+      <div class="link-shortened">
+        <a target="_blank" :href="originalLink">{{ shortenedLink }}</a>
+      </div>
       <button
         class="copy-btn"
-        :class="{ 'copied-btn': copied }"
+        :class="{
+          'copied-btn': copied,
+        }"
         @click="handleCopy"
       >
         {{ buttonTxt }}

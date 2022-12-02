@@ -8,6 +8,7 @@ html {
 body {
   font-family: $poppins;
   font-size: $default-font-size;
+  background-color: $background-color;
 }
 
 section {
@@ -33,6 +34,7 @@ ul {
 button {
   border: none;
   font-size: 16px;
+  cursor: pointer;
 }
 
 footer {
@@ -43,10 +45,15 @@ footer {
   margin: auto 0;
   color: $red;
   text-align: start;
+  font-style: italic;
   transition: all 0.2s;
 }
 
 .empty-input-error {
   @include form-error;
   transition: all 0.2s;
+}
+
+.copied-btn {
+  background-color: $dark-violet !important;
 }

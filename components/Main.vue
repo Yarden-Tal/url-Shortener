@@ -32,11 +32,7 @@
     </section>
 
     <section class="results-section">
-      <ShortLink
-        v-for="(result, i) in resultsArray"
-        class="result-container"
-        :result="result"
-      />
+      <ShortLink v-for="(result, i) in resultsArray" :result="result" />
     </section>
 
     <section class="adv-statistics-section">
