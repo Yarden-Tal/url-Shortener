@@ -25,6 +25,7 @@ h1 {
 h3 {
   color: $very-dark-violet;
   font-weight: nth(map-values($font-weights), 2);
+  margin-top: -20px;
 }
 
 ul {
@@ -56,4 +57,8 @@ footer {
 
 .copied-btn {
   background-color: $dark-violet !important;
+}
+
+.first-card-top {
+  top: -50px !important;
 }
