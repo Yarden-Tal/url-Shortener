@@ -21,11 +21,11 @@
         </ul>
         <!-- v-if MOBILE -->
         <!-- CHANGE BOOL !! -->
-        <button class="hamburger-btn">
+        <button @click="toggleMenu" class="hamburger-btn">
           <img src="/images/hamburger.svg" alt="Menu" />
         </button>
         <!-- CHANGE BOOL !! -->
-        <DropdownMenu v-show="false" />
+        <DropdownMenu v-show="menuIsOpen" />
         <!-- CHANGE BOOL !! -->
       </div>
     </nav>
@@ -37,6 +37,16 @@ import { Component } from "vue";
 import DropdownMenu from "./header/DropdownMenu.vue";
 
 export default {
+  data() {
+    return {
+      menuIsOpen: false as boolean,
+    };
+  },
+  methods: {
+    toggleMenu(): void {
+      this.menuIsOpen = !this.menuIsOpen;
+    },
+  },
   components: {
     DropdownMenu: DropdownMenu as Component,
   },
