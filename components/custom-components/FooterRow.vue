@@ -1,7 +1,7 @@
 <template>
-  <div class="">
-    <div>{{ rowTitle }}</div>
-    <ul>
+  <div class="footer-row">
+    <div class="footer-row-title">{{ rowTitle }}</div>
+    <ul class="footer-row-items">
       <li v-for="item in items">{{ item }}</li>
     </ul>
   </div>

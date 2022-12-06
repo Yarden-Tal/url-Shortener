@@ -29,3 +29,10 @@
   color: $gray;
   font-weight: nth(map-values($font-weights), 2);
 }
+
+/// Creates a uniform flex for footer center
+@mixin footer-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
