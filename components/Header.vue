@@ -2,7 +2,9 @@
   <header>
     <nav>
       <div class="nav-left-side">
-        <div>Shortly</div>
+        <a href="#" class="nav-logo"
+          ><img src="/images/logo.svg" alt="Shortly"
+        /></a>
         <!-- v-if DESKTOP -->
         <ul class="nav-left-side-desktop">
           <li><button>Features</button></li>
@@ -19,9 +21,9 @@
         </ul>
         <!-- v-if MOBILE -->
         <!-- CHANGE BOOL !! -->
-        <div class="hamburger-btn" v-show="false">
-          <img src="" alt="Menu" />
-        </div>
+        <button class="hamburger-btn">
+          <img src="/images/hamburger.svg" alt="Menu" />
+        </button>
         <!-- CHANGE BOOL !! -->
         <DropdownMenu v-show="false" />
         <!-- CHANGE BOOL !! -->

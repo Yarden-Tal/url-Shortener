@@ -1,12 +1,17 @@
 <template>
   <main>
     <section class="get-started-section">
-      <h1>More than just shorter links</h1>
-      <p class="get-started-txt">
-        Build your brands recognition and get detailed insights on how your
-        links are performing.
-      </p>
-      <GetStartedButton @click="focusOnInput" />
+      <div class="get-started-left">
+        <h1>More than just shorter links</h1>
+        <p class="get-started-txt">
+          Build your brands recognition and get detailed insights on how your
+          links are performing.
+        </p>
+        <GetStartedButton @click="focusOnInput" />
+      </div>
+      <div class="get-started-right">
+        <img src="../public/images/illustration-working.svg" alt="" />
+      </div>
     </section>
 
     <section class="form-section">

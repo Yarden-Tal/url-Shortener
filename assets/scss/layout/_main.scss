@@ -3,9 +3,16 @@
 
 // Get started section //
 .get-started-section {
-  margin: 2% 6% 20% 6%;
-  .get-started-txt {
-    @include grey-text;
+  display: flex;
+  flex-direction: column-reverse;
+  .get-started-left {
+    margin: 2% 6% 20% 6%;
+    .get-started-txt {
+      @include grey-text;
+    }
+  }
+  .get-started-right {
+    width: 100%;
   }
 }
 
