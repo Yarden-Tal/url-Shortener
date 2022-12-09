@@ -10,7 +10,12 @@
         <GetStartedButton @click="focusOnInput" />
       </div>
       <div class="get-started-right">
-        <img src="../public/images/illustration-working.svg" alt="" />
+        <DropdownMenu v-show="menuIsOpen" />
+        <img
+          v-show="!menuIsOpen"
+          src="../public/images/illustration-working.svg"
+          alt="Working"
+        />
       </div>
     </section>
 
@@ -69,6 +74,7 @@ import { Component } from "vue";
 import GetStartedButton from "../components/custom-components/GetStartedButton.vue";
 import Card from "../components/custom-components/Card.vue";
 import ShortLink from "../components/custom-components/ShortLink.vue";
+import DropdownMenu from "../components/header/DropdownMenu.vue";
 import getData from "../api/api";
 
 export default {
@@ -106,6 +112,7 @@ export default {
     GetStartedButton: GetStartedButton as Component,
     Card: Card as Component,
     ShortLink: ShortLink as Component,
+    DropdownMenu: DropdownMenu as Component,
   },
   methods: {
     handleInput(text: string): string {
@@ -154,6 +161,12 @@ export default {
     errorMsg(): string | undefined {
       if (this.inputIsEmpty) return "Please add a link";
       if (this.inputIsInvalid) return "Please enter a valid URL";
+    },
+  },
+  props: {
+    menuIsOpen: {
+      type: Boolean,
+      default: false,
     },
   },
 };

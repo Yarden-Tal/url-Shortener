@@ -1,0 +1,32 @@
+@import "../utilities/vars";
+
+.dropdown-menu {
+  display: block;
+  background-color: $dark-violet;
+  border-radius: 10px;
+  padding: 1.5em 0.5em;
+  margin: 1.4em 1em 0 1em;
+  hr {
+    opacity: 0.3;
+    width: 100%;
+  }
+  ul {
+    list-style-type: none;
+    align-items: stretch;
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.7em;
+    .dropdown-btn {
+      font-weight: nth(map-values($font-weights), 2);
+      background-color: transparent;
+      color: white;
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+    .signup-btn {
+      width: 100%;
+    }
+  }
+}

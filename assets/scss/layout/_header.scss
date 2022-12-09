@@ -15,6 +15,9 @@ header {
       ul {
         display: none;
       }
+      .dropdown-menu ul {
+        display: block;
+      }
       .hamburger-btn {
         background: transparent;
         display: flex;
@@ -27,8 +30,4 @@ header {
       }
     }
   }
-}
-
-.dropdown-menu {
-  display: block;
 }
