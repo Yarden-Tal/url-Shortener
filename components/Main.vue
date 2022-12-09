@@ -13,7 +13,7 @@
         <DropdownMenu v-show="menuIsOpen" />
         <img
           v-show="!menuIsOpen"
-          src="../public/images/illustration-working.svg"
+          src="/images/illustration-working.svg"
           alt="Working"
         />
       </div>
