@@ -15,9 +15,6 @@ header {
       ul {
         display: none;
       }
-      .dropdown-menu ul {
-        display: block;
-      }
       .hamburger-btn {
         background: transparent;
         display: flex;
@@ -25,7 +22,12 @@ header {
         justify-content: center;
         align-items: center;
         & img {
-          height: 20px;
+          height: 25px;
+          opacity: 0.6;
+          transition: all ease-in-out 0.2s;
+          &:hover {
+            opacity: 1;
+          }
         }
       }
     }

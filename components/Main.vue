@@ -82,7 +82,7 @@ export default {
     return {
       resultsArray: [] as Array<string[]>,
       urlRegex: RegExp(
-        /((?:(?:http?|ftp)[s]*:\/\/)?[a-z0-9-%\/\&=?\.]+\.[a-z]{2,4}\/?([^\s<>\#%"\,\{\}\\|\\\^\[\]`]+)?)/gi
+        /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi
       ),
       inputIsEmpty: false as boolean,
       inputIsInvalid: false as boolean,

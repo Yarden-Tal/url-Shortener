@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header @clicked="toggleMenu" />
+    <Header :menuIsOpen="menuIsOpen" @clicked="toggleMenu" />
     <Main :menuIsOpen="menuIsOpen" />
     <Footer />
   </div>

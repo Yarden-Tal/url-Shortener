@@ -18,6 +18,7 @@
     flex-direction: column;
     gap: 1.7em;
     .dropdown-btn {
+      transition: all ease-in-out 0.2s;
       font-weight: nth(map-values($font-weights), 2);
       background-color: transparent;
       color: white;

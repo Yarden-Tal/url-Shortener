@@ -43,6 +43,7 @@
       display: none;
     }
     & > button {
+      transition: all ease-in-out 0.2s;
       border-radius: 5px;
       padding: 5% 9%;
       @include cyan-btn-common;
