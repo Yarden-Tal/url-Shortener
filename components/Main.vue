@@ -12,7 +12,6 @@
       <div class="get-started-right">
         <DropdownMenu v-if="isMobile" v-show="menuIsOpen" />
         <img
-          v-if="!isMobile"
           v-show="!menuIsOpen"
           src="/images/illustration-working.svg"
           alt="Working"
