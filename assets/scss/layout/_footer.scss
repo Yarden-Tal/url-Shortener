@@ -64,6 +64,7 @@ footer {
     .footer-center {
       flex-direction: row;
       justify-content: center;
+      gap: 5em;
     }
   }
 }
@@ -80,6 +81,11 @@ footer {
       gap: 4em;
       .footer-row {
         text-align: start;
+        .footer-row-items {
+          li {
+            width: max-content;
+          }
+        }
       }
     }
   }
