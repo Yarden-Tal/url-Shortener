@@ -11,7 +11,7 @@ header {
         height: 22px;
       }
       .nav-left-side-desktop {
-        @include desktop-flex;
+        @include desktop-nav-flex;
         li button {
           @include desktop-nav-items;
         }
@@ -19,7 +19,11 @@ header {
     }
     .nav-right-side {
       ul {
-        @include desktop-flex;
+        @include desktop-nav-flex;
+        li button.get-started-btn {
+          padding: 8px 22px;
+          width: max-content;
+        }
         li button:not(.get-started-btn) {
           @include desktop-nav-items;
         }
