@@ -29,10 +29,10 @@ export default {
   },
   mounted() {
     this.checkScreenWidth();
-    window.onresize = this.checkScreenWidth;
+    window.addEventListener("resize", this.checkScreenWidth);
   },
   destroyed() {
-    window.onresize = this.checkScreenWidth;
+    window.removeEventListener("resize", this.checkScreenWidth);
   },
 };
 </script>
