@@ -21,7 +21,7 @@ header {
       ul {
         @include desktop-nav-flex;
         li button.get-started-btn {
-          padding: 8px 22px;
+          padding: 10px 24px;
           width: max-content;
         }
         li button:not(.get-started-btn) {
