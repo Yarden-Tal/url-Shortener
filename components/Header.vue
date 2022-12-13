@@ -15,7 +15,7 @@
       <div class="nav-right-side">
         <ul v-if="!isMobile">
           <li><button>Login</button></li>
-          <li><button>Sign Up</button></li>
+          <li><button class="get-started-btn">Sign Up</button></li>
         </ul>
         <button
           v-if="isMobile"

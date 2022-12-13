@@ -4,7 +4,7 @@
 .get-started-btn {
   transition: all ease-in-out 0.2s;
   border-radius: 30px;
-  padding: 5% 11%;
+  padding: 1em 2.3em;
   @include cyan-btn-hover;
   @include cyan-btn-common;
 }

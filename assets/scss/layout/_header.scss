@@ -5,16 +5,28 @@ header {
     display: flex;
     justify-content: space-between;
     .nav-left-side {
+      display: flex;
+      align-items: center;
       .nav-logo img {
         height: 22px;
       }
       .nav-left-side-desktop {
-        display: none;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        li button {
+          background: transparent;
+        }
       }
     }
     .nav-right-side {
       ul {
-        display: none;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        li button:not(.get-started-btn) {
+          background: transparent;
+        }
       }
       .hamburger-btn {
         background: transparent;
