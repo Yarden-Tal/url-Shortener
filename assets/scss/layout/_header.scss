@@ -11,21 +11,17 @@ header {
         height: 22px;
       }
       .nav-left-side-desktop {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
+        @include desktop-flex;
         li button {
-          background: transparent;
+          @include desktop-nav-items;
         }
       }
     }
     .nav-right-side {
       ul {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
+        @include desktop-flex;
         li button:not(.get-started-btn) {
-          background: transparent;
+          @include desktop-nav-items;
         }
       }
       .hamburger-btn {
