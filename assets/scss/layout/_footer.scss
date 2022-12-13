@@ -1,4 +1,6 @@
 footer {
+  display: flex;
+  flex-direction: column;
   padding: 3em 0;
   text-align: center;
   color: white;
@@ -26,6 +28,13 @@ footer {
       .footer-row-items {
         @include footer-flex;
         padding: unset;
+        li {
+          cursor: pointer;
+          &:hover {
+            color: $cyan;
+            transition: all ease-in-out 0.2s;
+          }
+        }
       }
     }
   }
@@ -40,6 +49,38 @@ footer {
     & .social-media-icon-container > img {
       object-fit: cover;
       width: 30px;
+      cursor: pointer;
+      &:hover {
+        filter: invert(60%) sepia(90%) saturate(404%) hue-rotate(119deg)
+          brightness(100%) contrast(89%);
+        transition: all ease-in-out 0.2s;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) and (max-width: 1219px) {
+  footer {
+    .footer-center {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (min-width: 1220px) {
+  footer {
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    gap: 10em;
+    padding: 0.3em 3em 3em 3em;
+    .footer-center {
+      flex-direction: row;
+      gap: 4em;
+      .footer-row {
+        text-align: start;
+      }
     }
   }
 }
