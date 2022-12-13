@@ -1,8 +1,12 @@
 <template>
   <div>
-    <Header :menuIsOpen="menuIsOpen" @clicked="toggleMenu" />
-    <Main :menuIsOpen="menuIsOpen" />
-    <Footer />
+    <Header
+      :isMobile="isMobile"
+      :menuIsOpen="menuIsOpen"
+      @clicked="toggleMenu"
+    />
+    <Main :isMobile="isMobile" :menuIsOpen="menuIsOpen" />
+    <Footer :isMobile="isMobile" />
   </div>
 </template>
 
@@ -11,12 +15,24 @@ export default {
   data() {
     return {
       menuIsOpen: false as boolean,
+      mobileBreakpoint: 580 as number,
+      isMobile: true as boolean,
     };
   },
   methods: {
+    checkScreenWidth(): boolean {
+      return (this.isMobile = window.innerWidth <= this.mobileBreakpoint);
+    },
     toggleMenu(): void {
       this.menuIsOpen = !this.menuIsOpen;
     },
+  },
+  mounted() {
+    this.checkScreenWidth();
+    window.addEventListener("resize", this.checkScreenWidth);
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.checkScreenWidth);
   },
 };
 </script>

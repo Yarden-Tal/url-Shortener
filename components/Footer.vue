@@ -42,6 +42,12 @@ export default {
       ] as string[],
     };
   },
+  props: {
+    isMobile: {
+      type: Boolean,
+      default: false,
+    },
+  },
   components: {
     ShortlyText: ShortlyText as Component,
     FooterRow: FooterRow as Component,

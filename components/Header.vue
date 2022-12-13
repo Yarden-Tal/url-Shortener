@@ -5,8 +5,7 @@
         <a @click="reloadPage" href="#" class="nav-logo"
           ><img src="/images/logo.svg" alt="Shortly"
         /></a>
-        <!-- v-if DESKTOP -->
-        <ul class="nav-left-side-desktop">
+        <ul v-if="!isMobile" class="nav-left-side-desktop">
           <li><button>Features</button></li>
           <li><button>Pricing</button></li>
           <li><button>Resources</button></li>
@@ -14,14 +13,12 @@
       </div>
 
       <div class="nav-right-side">
-        <!-- v-if DESKTOP -->
-        <ul>
+        <ul v-if="!isMobile">
           <li><button>Login</button></li>
           <li><button>Sign Up</button></li>
         </ul>
-        <!-- v-if MOBILE -->
-        <!-- CHANGE BOOL !! -->
         <button
+          v-if="isMobile"
           @click="handleClick"
           class="hamburger-btn menu"
           onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
@@ -48,6 +45,10 @@
 export default {
   props: {
     menuIsOpen: {
+      type: Boolean,
+      default: false,
+    },
+    isMobile: {
       type: Boolean,
       default: false,
     },
