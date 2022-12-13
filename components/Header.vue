@@ -2,7 +2,7 @@
   <header>
     <nav>
       <div class="nav-left-side">
-        <a href="#" class="nav-logo"
+        <a @click="reloadPage" href="#" class="nav-logo"
           ><img src="/images/logo.svg" alt="Shortly"
         /></a>
         <!-- v-if DESKTOP -->
@@ -53,6 +53,9 @@ export default {
     },
   },
   methods: {
+    reloadPage(): void {
+      window.location.reload();
+    },
     handleClick(): void {
       this.$emit("clicked");
     },
