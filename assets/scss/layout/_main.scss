@@ -127,6 +127,9 @@
       position: relative;
       top: -42px;
     }
+    & .card-hr-desktop {
+      display: none;
+    }
     z-index: 1;
     padding: 0 5%;
     background-color: white;
@@ -186,5 +189,44 @@
       text-align: left;
       margin: 0 6%;
     }
+  }
+  h2 {
+    font-size: 42px;
+  }
+  .adv-statistics-section {
+    width: 45%;
+    margin: 0 auto;
+    padding-bottom: 2%;
+  }
+  .feature-cards-section {
+    width: 86%;
+    margin: 0 auto 15% auto;
+    gap: 2.5rem;
+    flex-direction: row;
+    & .card-hr {
+      display: none;
+    }
+    & .card-hr-desktop {
+      display: block;
+      background: hsl(180deg, 66%, 49%);
+      border: none;
+      height: 10px;
+      width: 55vw;
+      z-index: 0;
+      position: absolute;
+      top: 160px;
+      left: -50px;
+    }
+    & .card-container {
+      text-align: left;
+  }
+  }
+  .second {
+    position: relative;
+    top: 55px;
+  }
+  .third {
+    position: relative;
+    top: 110px;
   }
 }

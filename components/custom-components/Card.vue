@@ -1,5 +1,8 @@
 <template>
-  <div class="card-container">
+<div style="position: relative;">
+  <hr class="card-hr-desktop" v-show="isSecond">
+</div>
+<div class="card-container" :class="{'second': isSecond, 'third': isThird}">
     <hr v-show="!isFirst" class="card-hr" />
     <div :class="{ 'first-card-top': isFirst }">
       <img :src="image" :alt="title" />
@@ -24,9 +27,14 @@ export default {
   },
   computed: {
     isFirst(): boolean {
-      if (this.title === "Brand Recognition") return true;
-      else return false;
+      return this.title === "Brand Recognition";
     },
+    isSecond(): boolean {
+      return this.title === "Detailed Records";
+    },
+    isThird(): boolean {
+      return this.title === "Fully Customizable";
+    }
   },
 };
 </script>
