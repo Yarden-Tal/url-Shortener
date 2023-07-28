@@ -154,6 +154,7 @@ export default {
     },
     focusOnInput(): void {
       const input = this.$refs.urlInput as HTMLInputElement;
+      window.scroll(0, 630);
       input.focus();
     },
   },
