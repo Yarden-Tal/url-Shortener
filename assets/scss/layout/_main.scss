@@ -167,3 +167,24 @@
     font-weight: nth(map-values($font-weights), 2);
   }
 }
+
+@media screen and (min-width: $tablet) {
+  .get-started-section {
+    margin: 3.5em 0;
+    flex-direction: row;
+    align-items: center;
+    & h1 {
+      margin: 0;
+      font-size: 64px;
+      line-height: 1.2;
+    }
+    .get-started-txt {
+      margin: 10px 0 20px 0;
+    }
+    & .get-started-left {
+      margin: 0;
+      text-align: left;
+      margin: 0 6%;
+    }
+  }
+}
