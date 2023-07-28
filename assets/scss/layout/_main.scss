@@ -19,7 +19,7 @@
 
 // Form section
 .form-section {
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 0 auto;
   width: 85%;
   background: url("/images/bg-shorten-mobile.svg");
@@ -33,7 +33,7 @@
     & > input {
       font-size: $default-font-size;
       border-color: transparent;
-      border-radius: 5px;
+      border-radius: 10px;
       padding: 5% 9%;
       margin-bottom: -5px;
       & ::placeholder {
@@ -45,7 +45,7 @@
     }
     & > button {
       transition: all ease-in-out 0.2s;
-      border-radius: 5px;
+      border-radius: 10px;
       padding: 5% 9%;
       @include cyan-btn-common;
       @include cyan-btn-hover;
@@ -55,7 +55,7 @@
 
 // Results section
 .results-section {
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 0 auto;
   width: 85%;
   display: flex;
@@ -86,7 +86,7 @@
       }
       & .copy-btn {
         width: 100%;
-        border-radius: 5px;
+        border-radius: 10px;
         padding: 5% 9%;
         @include cyan-btn-common;
         @include cyan-btn-hover;
@@ -117,6 +117,7 @@
     @include grey-text;
   }
   & .card-container {
+    border-radius: 8px;
     & .card-hr {
       transform: rotate(90deg);
       background: $cyan;
@@ -192,6 +193,28 @@
   }
   h2 {
     font-size: 42px;
+  }
+  .form-section {
+    & .form-container {
+      position: relative;
+      gap: 2rem;
+      flex-direction: row;
+      & p {
+        position: absolute;
+        top: 140px;
+      }
+      & input {
+        margin-bottom: 0;
+        width: 70%;
+      }
+      & button {
+        width: 30%;
+      }
+      & button, input {
+        padding: 2% 3%;
+        font-size: 24px;
+      }
+    }
   }
   .adv-statistics-section {
     width: 45%;
