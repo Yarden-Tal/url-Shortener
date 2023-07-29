@@ -172,7 +172,11 @@
   }
 }
 
+/* Tablet & desktop breakpoint */
 @media screen and (min-width: $tablet) {
+  .get-started-btn {
+    font-size: 20px;
+  }
   .get-started-section {
     margin: 3.5em 0;
     flex-direction: row;
@@ -216,6 +220,42 @@
       }
     }
   }
+  .results-section {
+    border-radius: 10px;
+    margin: 30px auto 0 auto;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    & .result-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 1em;
+      border-radius: 10px;
+      & .link-original {
+        text-align: start;
+        flex: 2;
+        overflow: unset;
+        border-bottom: none;
+      }
+      & .result-inner {
+        padding: 0;
+        display: flex;
+        flex: 1;
+        align-items: center;
+        & .link-shortened {
+          margin-bottom: 0;
+          width: 50%;
+
+        }
+        & .copy-btn {
+          margin-left: 0.75em;
+          padding: 15px 28px;
+          width: 50%;
+        }
+      }
+    }
+  }
   .adv-statistics-section {
     width: 45%;
     margin: 0 auto;
@@ -251,5 +291,11 @@
   .third {
     position: relative;
     top: 110px;
+  }
+  .boost-today-section {
+    & > div {
+      color: #fff;
+      font-size: 2rem;
+    }
   }
 }
