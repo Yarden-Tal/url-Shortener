@@ -80,23 +80,23 @@ import getData from "../api/api";
 export default {
   data() {
     return {
-      resultsArray: [] as Array<string[]>,
+      resultsArray: [] satisfies Array<string[]>,
       urlRegex: RegExp(
         /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi
       ),
-      inputIsEmpty: false as boolean,
-      inputIsInvalid: false as boolean,
+      inputIsEmpty: false satisfies boolean,
+      inputIsInvalid: false satisfies boolean,
       inputUrl: "",
       cardImages: [
         "images/icon-brand-recognition.svg",
         "images/icon-detailed-records.svg",
         "images/icon-fully-customizable.svg",
-      ] as string[],
+      ] satisfies string[],
       cardTitles: [
         "Brand Recognition",
         "Detailed Records",
         "Fully Customizable",
-      ] as string[],
+      ] satisfies string[],
       cardTexts: [
         `Boost your brand recognition with each click. Generic links don’t 
         mean a thing. Branded links help instil confidence in your content.`,
@@ -105,14 +105,14 @@ export default {
         `Improve brand awareness and content discoverability through customizable 
         links, supercharging audience engagement.
 `,
-      ] as string[],
+      ] satisfies string[],
     };
   },
   components: {
-    GetStartedButton: GetStartedButton as Component,
-    Card: Card as Component,
-    ShortLink: ShortLink as Component,
-    DropdownMenu: DropdownMenu as Component,
+    GetStartedButton: GetStartedButton satisfies Component,
+    Card: Card satisfies Component,
+    ShortLink: ShortLink satisfies Component,
+    DropdownMenu: DropdownMenu satisfies Component,
   },
   methods: {
     handleInput(text: string): string {
@@ -153,7 +153,7 @@ export default {
       this.inputUrl = "";
     },
     focusOnInput(): void {
-      const input = this.$refs.urlInput as HTMLInputElement;
+      const input = this.$refs.urlInput satisfies HTMLInputElement;
       if (window.innerWidth < 680) window.scrollTo(0, 580);
       else window.scrollTo(0, 560);
       input.focus();

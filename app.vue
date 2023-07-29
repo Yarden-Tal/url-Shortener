@@ -14,9 +14,9 @@
 export default {
   data() {
     return {
-      menuIsOpen: false as boolean,
-      mobileBreakpoint: 580 as number,
-      isMobile: true as boolean,
+      menuIsOpen: false satisfies boolean,
+      mobileBreakpoint: 580 satisfies number,
+      isMobile: true satisfies boolean,
     };
   },
   methods: {

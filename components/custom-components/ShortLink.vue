@@ -24,7 +24,7 @@
 export default {
   data() {
     return {
-      copied: false as boolean,
+      copied: false satisfies boolean,
     };
   },
   methods: {

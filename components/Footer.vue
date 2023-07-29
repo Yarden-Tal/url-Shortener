@@ -31,15 +31,15 @@ export default {
         "Link Shortening",
         "Branded Links",
         "Analytics",
-      ] as string[],
-      rowItemsTwo: ["Blog", "Developers", "Support"] as string[],
-      rowItemsThree: ["About", "Our Team", "Careers", "Contact"] as string[],
+      ] satisfies string[],
+      rowItemsTwo: ["Blog", "Developers", "Support"] satisfies string[],
+      rowItemsThree: ["About", "Our Team", "Careers", "Contact"] satisfies string[],
       socialMediaIcons: [
         "images/icon-facebook.svg",
         "images/icon-twitter.svg",
         "images/icon-pinterest.svg",
         "images/icon-instagram.svg",
-      ] as string[],
+      ] satisfies string[],
     };
   },
   props: {
@@ -49,8 +49,8 @@ export default {
     },
   },
   components: {
-    ShortlyText: ShortlyText as Component,
-    FooterRow: FooterRow as Component,
+    ShortlyText: ShortlyText satisfies Component,
+    FooterRow: FooterRow satisfies Component,
   },
   methods: {
     formatAlt(text: string): string {
