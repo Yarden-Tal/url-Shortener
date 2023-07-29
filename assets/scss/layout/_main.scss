@@ -174,9 +174,6 @@
 
 /* Tablet & desktop breakpoint */
 @media screen and (min-width: $tablet) {
-  .get-started-btn {
-    font-size: 20px;
-  }
   .get-started-section {
     margin: 3.5em 0;
     flex-direction: row;
@@ -214,7 +211,8 @@
       & button {
         width: 30%;
       }
-      & button, input {
+      & button,
+      input {
         padding: 2% 3%;
         font-size: 24px;
       }
@@ -246,7 +244,6 @@
         & .link-shortened {
           margin-bottom: 0;
           width: 50%;
-
         }
         & .copy-btn {
           margin-left: 0.75em;
@@ -282,7 +279,7 @@
     }
     & .card-container {
       text-align: left;
-  }
+    }
   }
   .second {
     position: relative;

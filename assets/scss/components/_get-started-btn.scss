@@ -8,3 +8,9 @@
   @include cyan-btn-hover;
   @include cyan-btn-common;
 }
+
+@media screen and (min-width: $tablet) {
+  .get-started-btn {
+    font-size: 20px;
+  }
+}
