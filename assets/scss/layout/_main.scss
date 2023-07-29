@@ -112,7 +112,7 @@
   margin-bottom: 15%;
   display: flex;
   flex-direction: column;
-  gap: 5.5rem;
+  gap: 2.75rem;
   & p {
     @include grey-text;
   }
@@ -174,10 +174,17 @@
 
 /* Tablet & desktop breakpoint */
 @media screen and (min-width: $tablet) {
+  header {
+    margin: 0.5em auto;
+    padding: 0;
+    width: 85%;
+  }
   .get-started-section {
-    margin: 3.5em 0;
+    margin: 3.5em auto;
     flex-direction: row;
     align-items: center;
+    gap: 0.25em;
+    width: 85%;
     & h1 {
       margin: 0;
       font-size: 64px;
@@ -189,7 +196,10 @@
     & .get-started-left {
       margin: 0;
       text-align: left;
-      margin: 0 6%;
+      margin: 0 0 6% 0;
+    }
+    & .get-started-right > img {
+      width: 125%;
     }
   }
   h2 {
@@ -202,7 +212,7 @@
       flex-direction: row;
       & p {
         position: absolute;
-        top: 140px;
+        top: 150px;
       }
       & input {
         margin-bottom: 0;
@@ -254,13 +264,12 @@
     }
   }
   .adv-statistics-section {
-    width: 45%;
+    width: 43%;
     margin: 0 auto;
     padding-bottom: 2%;
   }
   .feature-cards-section {
     width: 86%;
-    margin: 0 auto 15% auto;
     gap: 2.5rem;
     flex-direction: row;
     & .card-hr {
