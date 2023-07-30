@@ -1,6 +1,6 @@
 <template>
 <div style="position: relative;">
-  <hr class="card-hr-desktop" v-show="doShowHr">
+  <hr class="card-hr-desktop">
 </div>
 <div class="card-container" :class="{'second': isSecond, 'third': isThird}">
     <hr v-show="!isFirst" class="card-hr" />
@@ -26,9 +26,6 @@ export default {
     },
   },
   computed: {
-    doShowHr(): boolean {
-      return this.title === "Detailed Records" && window.innerWidth > 680
-    },
     isFirst(): boolean {
       return this.title === "Brand Recognition";
     },
