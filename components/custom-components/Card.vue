@@ -1,5 +1,5 @@
 <template>
-<div style="position: relative;">
+<div class="hr-d-cter" v-show="title === 'Detailed Records'">
   <hr class="card-hr-desktop">
 </div>
 <div class="card-container" :class="{'second': isSecond, 'third': isThird}">

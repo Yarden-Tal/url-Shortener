@@ -112,7 +112,7 @@
   margin-bottom: 15%;
   display: flex;
   flex-direction: column;
-  gap: 2.75rem;
+  gap: 5.5rem;
   & p {
     @include grey-text;
   }
@@ -127,9 +127,6 @@
       z-index: -2;
       position: relative;
       top: -42px;
-    }
-    & div > .card-hr-desktop {
-      display: none;
     }
     z-index: 1;
     padding: 0 5%;
@@ -151,6 +148,13 @@
       & h3 {
         font-weight: nth(map-values($font-weights), 2);
       }
+    }
+  }
+  & .hr-d-cter {
+    position: relative;
+    display: none;
+    & .card-hr-desktop {
+      display: none;
     }
   }
 }
@@ -275,19 +279,22 @@
     & .card-hr {
       display: none;
     }
-    & .card-hr-desktop {
-      display: block;
-      background: hsl(180deg, 66%, 49%);
-      border: none;
-      height: 10px;
-      width: 55vw;
-      z-index: 0;
-      position: absolute;
-      top: 160px;
-      left: -50px;
-    }
     & .card-container {
       text-align: left;
+    }
+    & .hr-d-cter {
+      position: absolute;
+      display: block;
+      left: 260px;
+      & .card-hr-desktop {
+        display: block;
+        background: hsl(180deg, 66%, 49%);
+        border: none;
+        height: 10px;
+        width: 55vw;
+        position: absolute;
+        top: 160px;
+      }
     }
   }
   .second {
